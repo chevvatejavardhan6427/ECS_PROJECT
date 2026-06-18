@@ -1,0 +1,17 @@
+{
+  "name": "LifeLink - Blood & Organ Donation Network",
+  "short_name": "LifeLink",
+  "description": "Find blood donors, verified camps, emergency requests, and organ donation awareness resources.",
+  "theme_color": "#ff6b6b",
+  "background_color": "#f9fafb",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/lifelink-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

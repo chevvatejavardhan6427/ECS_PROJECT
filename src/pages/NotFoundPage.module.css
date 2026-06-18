@@ -1,0 +1,23 @@
+.card {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card h1 {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+}
+
+.card p {
+  margin: 0;
+  color: var(--color-text-soft);
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

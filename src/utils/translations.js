@@ -1,0 +1,38 @@
+export const dictionary = {
+  en: {
+    heroTitle: 'Find donors near you, faster and more safely.',
+    heroSubtitle:
+      'LifeLink blends verified health eligibility, real-time location awareness, donation camps, and organ pledge education into one humane platform.',
+    findBlood: 'Find Blood',
+    register: 'Register',
+    dashboard: 'Dashboard',
+    donors: 'Donors',
+    camps: 'Camps',
+    awareness: 'Awareness',
+    emergency: 'Emergency',
+    profile: 'Profile',
+    admin: 'Admin',
+    login: 'Login',
+    logout: 'Logout',
+    language: 'Language',
+    theme: 'Theme',
+  },
+  hi: {
+    heroTitle: 'पास के रक्तदाताओं को तेज़ और सुरक्षित तरीके से खोजें।',
+    heroSubtitle:
+      'LifeLink सत्यापित स्वास्थ्य पात्रता, रियल-टाइम लोकेशन, दान शिविर और अंगदान जागरूकता को एक ही मानवीय प्लेटफ़ॉर्म में जोड़ता है।',
+    findBlood: 'रक्त खोजें',
+    register: 'पंजीकरण',
+    dashboard: 'डैशबोर्ड',
+    donors: 'दाता',
+    camps: 'शिविर',
+    awareness: 'जागरूकता',
+    emergency: 'आपातकाल',
+    profile: 'प्रोफ़ाइल',
+    admin: 'एडमिन',
+    login: 'लॉगिन',
+    logout: 'लॉगआउट',
+    language: 'भाषा',
+    theme: 'थीम',
+  },
+};

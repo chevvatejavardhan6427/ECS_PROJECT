@@ -1,0 +1,511 @@
+.presentationShell {
+  position: relative;
+  min-height: 100vh;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.presentationBackdrop {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 107, 107, 0.2), transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(118, 198, 255, 0.22), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(255, 107, 107, 0.12), transparent 36%),
+    linear-gradient(180deg, #fffdfd 0%, #f6fbff 52%, #ffffff 100%);
+  z-index: 0;
+}
+
+.topBar,
+.bottomBar,
+.deckFrame,
+.progressTrack {
+  position: relative;
+  z-index: 1;
+}
+
+.topBar {
+  width: min(100%, 1320px);
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.topBar strong,
+.kicker,
+.notesLabel,
+.eyebrow,
+.signalRow span,
+.bulletCard span,
+.stackCard span {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kicker,
+.notesLabel,
+.eyebrow {
+  color: #e45151;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.topBar strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  color: #122033;
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.utilityButton,
+.utilityLink,
+.navButton {
+  border: 1px solid rgba(18, 32, 51, 0.08);
+  background: rgba(255, 255, 255, 0.82);
+  color: #122033;
+  border-radius: 999px;
+  padding: 0.85rem 1.15rem;
+  font-weight: 800;
+  box-shadow: 0 20px 50px rgba(18, 32, 51, 0.08);
+  backdrop-filter: blur(14px);
+  transition: transform 220ms ease, opacity 220ms ease, background-color 220ms ease;
+}
+
+.utilityButton:hover,
+.utilityLink:hover,
+.navButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.utilityLink {
+  text-decoration: none;
+}
+
+.progressTrack {
+  width: min(100%, 1320px);
+  height: 6px;
+  margin: 0 auto 1.25rem;
+  border-radius: 999px;
+  background: rgba(18, 32, 51, 0.08);
+  overflow: hidden;
+}
+
+.progressBar {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff6b6b, #7fcfff);
+  transition: width 280ms ease;
+}
+
+.deckFrame {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.slide {
+  position: relative;
+  min-height: 70vh;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(18, 32, 51, 0.08);
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 30px 80px rgba(18, 32, 51, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.18));
+  pointer-events: none;
+}
+
+.slideContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  min-height: calc(70vh - 4rem);
+}
+
+.copyBlock {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.copyBlock h1 {
+  margin: 0;
+  max-width: 11ch;
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.94;
+  color: #102031;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 32rem;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.6;
+  color: #506070;
+}
+
+.copyBlock blockquote {
+  margin: 0.5rem 0 0;
+  max-width: 26rem;
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  color: #2b3b4b;
+  padding-left: 1rem;
+  border-left: 3px solid rgba(255, 107, 107, 0.4);
+}
+
+.bulletGrid,
+.stackGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.bulletCard,
+.stackCard {
+  display: grid;
+  gap: 0.8rem;
+  min-height: 9.5rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(18, 32, 51, 0.07);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 44px rgba(18, 32, 51, 0.06);
+  animation: liftIn 600ms ease both;
+}
+
+.bulletCard span,
+.stackCard span {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #7b8ba0;
+}
+
+.bulletCard strong,
+.stackCard strong {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  color: #102031;
+}
+
+.visualBlock {
+  position: relative;
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.visualHalo {
+  position: absolute;
+  width: min(32rem, 80%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.22), rgba(127, 207, 255, 0.14), transparent 70%);
+  filter: blur(12px);
+  animation: slowFloat 7s ease-in-out infinite;
+}
+
+.visualPanel {
+  position: relative;
+  width: min(100%, 30rem);
+  min-height: 31rem;
+  padding: 1.15rem;
+  border-radius: 30px;
+  border: 1px solid rgba(18, 32, 51, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 250, 255, 0.92));
+  box-shadow: 0 32px 80px rgba(18, 32, 51, 0.1);
+}
+
+.visualHeader {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.visualHeader span {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: rgba(18, 32, 51, 0.12);
+}
+
+.visualBody {
+  display: grid;
+  justify-items: center;
+  gap: 1.4rem;
+  padding: 2rem 0 0.5rem;
+}
+
+.visualPulse {
+  position: relative;
+  width: 13rem;
+  height: 13rem;
+  display: grid;
+  place-items: center;
+}
+
+.pulseRing,
+.pulseCore {
+  border-radius: 50%;
+}
+
+.pulseRing {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 107, 107, 0.18);
+  background:
+    radial-gradient(circle at center, rgba(255, 107, 107, 0.08), transparent 60%),
+    conic-gradient(from 180deg, rgba(127, 207, 255, 0.6), rgba(255, 107, 107, 0.7), rgba(127, 207, 255, 0.6));
+  mask: radial-gradient(circle at center, transparent 58%, black 59%);
+  animation: spin 12s linear infinite;
+}
+
+.pulseCore {
+  width: 6.8rem;
+  height: 6.8rem;
+  display: grid;
+  place-items: center;
+  font-family: 'Sora', sans-serif;
+  font-size: 2.6rem;
+  color: #ffffff;
+  background: linear-gradient(140deg, #ff6b6b, #ff8f8f);
+  box-shadow: 0 24px 45px rgba(255, 107, 107, 0.32);
+}
+
+.signalRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.signalRow span {
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(18, 32, 51, 0.05);
+  color: #506070;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.visualMetrics {
+  width: 100%;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.visualMetrics div {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(18, 32, 51, 0.07);
+}
+
+.visualMetrics strong {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  color: #102031;
+}
+
+.visualMetrics span {
+  color: #66788a;
+  font-size: 0.92rem;
+}
+
+.notesPanel {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: 24px;
+  background: rgba(16, 32, 49, 0.92);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 24px 60px rgba(16, 32, 49, 0.18);
+}
+
+.notesPanel p,
+.notesPanel small {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.notesPanel small {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.bottomBar {
+  width: min(100%, 1320px);
+  margin: 1rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.navButton:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.dotRail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(18, 32, 51, 0.16);
+  transition: transform 220ms ease, background-color 220ms ease;
+}
+
+.dotActive {
+  background: #ff6b6b;
+  transform: scale(1.3);
+}
+
+.hero .copyBlock h1,
+.closing .copyBlock h1 {
+  max-width: 10ch;
+}
+
+.impact .copyBlock h1 {
+  max-width: 12ch;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slowFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes liftIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  .presentationShell {
+    padding: 1rem;
+  }
+
+  .topBar,
+  .bottomBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topActions {
+    justify-content: space-between;
+  }
+
+  .slide {
+    min-height: auto;
+  }
+
+  .slideContent {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .copyBlock h1 {
+    max-width: 100%;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .visualPanel {
+    min-height: 26rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .presentationShell {
+    padding: 0.85rem;
+  }
+
+  .slide {
+    padding: 1.1rem;
+    border-radius: 28px;
+  }
+
+  .bulletGrid,
+  .stackGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .visualPanel {
+    width: 100%;
+    min-height: 22rem;
+    padding: 1rem;
+  }
+
+  .visualPulse {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .pulseCore {
+    width: 5.5rem;
+    height: 5.5rem;
+    font-size: 2.1rem;
+  }
+
+  .signalRow {
+    gap: 0.45rem;
+  }
+
+  .signalRow span {
+    font-size: 0.66rem;
+  }
+
+  .bottomBar {
+    align-items: stretch;
+  }
+}

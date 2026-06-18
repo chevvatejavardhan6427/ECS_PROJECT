@@ -1,0 +1,29 @@
+.shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.orbOne,
+.orbTwo {
+  position: fixed;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 999px;
+  filter: blur(30px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orbOne {
+  top: -8rem;
+  right: -5rem;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.22), transparent 70%);
+}
+
+.orbTwo {
+  left: -7rem;
+  bottom: 5rem;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.18), transparent 72%);
+}

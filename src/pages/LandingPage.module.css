@@ -1,0 +1,96 @@
+.heroSection {
+  padding-top: 1rem;
+}
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.15fr 1fr;
+  padding: 2rem;
+  background: var(--gradient-hero);
+}
+
+.copy {
+  display: grid;
+  align-content: center;
+  gap: 1.2rem;
+}
+
+.copy h1 {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.7rem, 6vw, 4.8rem);
+  line-height: 0.98;
+}
+
+.copy p {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 1.05rem;
+  color: var(--color-text-soft);
+}
+
+.actions,
+.quoteCloud {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.highlightCard,
+.supportCard {
+  position: absolute;
+  max-width: 15rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--color-shadow);
+}
+
+.highlightCard {
+  left: 0;
+  top: 2.5rem;
+}
+
+.supportCard {
+  right: 0;
+  bottom: 1rem;
+}
+
+.highlightCard strong,
+.supportCard strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: 'Sora', sans-serif;
+}
+
+.highlightCard p,
+.supportCard p {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    order: -1;
+  }
+
+  .highlightCard,
+  .supportCard {
+    position: static;
+    max-width: none;
+  }
+}

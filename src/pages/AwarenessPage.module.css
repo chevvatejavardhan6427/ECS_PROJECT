@@ -1,0 +1,67 @@
+.hero,
+.pledgeForm {
+  padding: 1.6rem;
+}
+
+.hero h1,
+.factCard strong,
+.stepsCard h3 {
+  margin: 0.7rem 0 0.5rem;
+  font-family: 'Sora', sans-serif;
+}
+
+.hero p,
+.factCard p,
+.stepsCard li {
+  color: var(--color-text-soft);
+}
+
+.factCard {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.3rem;
+}
+
+.split {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.organGrid {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.pledgeForm {
+  display: grid;
+  gap: 1rem;
+}
+
+.checkRow {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.stepsCard {
+  padding: 1.3rem;
+}
+
+.stepsCard ol {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.message {
+  margin: 0;
+  color: var(--color-accent);
+  font-weight: 800;
+}
+
+@media (max-width: 960px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,36 @@
+.wrap {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.quote {
+  position: relative;
+  overflow: hidden;
+  padding: 1.35rem 1.2rem 1.2rem 1.65rem;
+}
+
+.quote::after {
+  content: '';
+  position: absolute;
+  inset: auto -3rem -3rem auto;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 999px;
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.quote span {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.8rem;
+  font-size: 3rem;
+  color: rgba(255, 107, 107, 0.28);
+}
+
+.quote p {
+  position: relative;
+  margin: 0;
+  font-weight: 800;
+  max-width: 16rem;
+}

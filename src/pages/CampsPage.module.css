@@ -1,0 +1,38 @@
+.layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.25fr 0.75fr;
+}
+
+.sidebar {
+  padding: 1.4rem;
+}
+
+.sidebar h3 {
+  margin: 0 0 0.5rem;
+  font-family: 'Sora', sans-serif;
+}
+
+.sidebar p,
+.sidebar li {
+  color: var(--color-text-soft);
+}
+
+.sidebar ul {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.message {
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  background: rgba(76, 175, 80, 0.12);
+  color: var(--color-accent);
+  font-weight: 800;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

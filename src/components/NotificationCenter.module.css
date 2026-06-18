@@ -1,0 +1,42 @@
+.panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.2rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header h3 {
+  margin: 0.7rem 0 0;
+  font-family: 'Sora', sans-serif;
+}
+
+.list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.item {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-border);
+}
+
+.unread {
+  border-color: rgba(255, 107, 107, 0.24);
+  box-shadow: 0 12px 28px rgba(255, 107, 107, 0.12);
+}
+
+.item p,
+.item small {
+  margin: 0;
+  color: var(--color-text-soft);
+}
